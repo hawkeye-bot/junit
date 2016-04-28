@@ -1,20 +1,22 @@
-package com.hoeckxer;
+package com.hoeckxer.rule;
 
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.core.Is.is;
-
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.hoeckxer.App;
+import com.hoeckxer.runner.MyExceptionRunner;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.runner.RunWith;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Unit test for simple App.
  */
-@RunWith(MyExceptionRunner.class)
-public class AppTest 
+public class AppTest
 {
+    @Rule
+    public MyExceptionRule rule = new MyExceptionRule();
+
     @Before
     public void init()
     {
@@ -33,5 +35,6 @@ public class AppTest
 
         //verify
         assertThat(result,is("Hello world"));
+//        throw new RuntimeException("Some other error");
     }
 }

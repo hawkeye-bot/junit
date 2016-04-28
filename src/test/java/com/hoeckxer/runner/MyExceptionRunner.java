@@ -1,5 +1,6 @@
-package com.hoeckxer;
+package com.hoeckxer.runner;
 
+import com.hoeckxer.ThrowingInitRunBefores;
 import org.junit.Before;
 import org.junit.internal.runners.statements.RunBefores;
 import org.junit.runners.BlockJUnit4ClassRunner;
